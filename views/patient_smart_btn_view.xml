@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="patient_smart_btn_tree" model="ir.ui.view">
+        <field name="name">patient.tree</field>
+        <field name="model">patient.smart.btn</field>
+        <field name="arch" type="xml">
+            <tree string="patient name">
+                <field name="patient_id"/>
+                <field name="name"/>
+                <field name="dob"/>
+                <field name="age"/>
+                <field name="ph_no"/>
+                <field name="gender"/>
+<!--                <field name="appointment_count"/>-->
+            </tree>
+        </field>
+    </record>
+    <record id="patient_smart_btn_form" model="ir.ui.view">
+        <field name="name">patient.smart.btn.form</field>
+        <field name="model">patient.smart.btn</field>
+        <field name="arch" type="xml">
+            <form string="patient">
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button class="oe_stat_button" type="object" name="action_view_appointments"
+                                icon="fa-star">
+                            <field string="Appointment" name="appointment_count" widget="statinfo"/>
+                        </button>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="patient_id"/>
+                            <field name="name"/>
+                            <field name="dob"/>
+<!--                            <field name="appointment_count"/>-->
+                        </group>
+                        <group>
+                            <field name="age"/>
+                            <field name="ph_no"/>
+                            <field name="gender"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="action_patient_smart_btn" model="ir.actions.act_window">
+        <field name="name">Patient</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">patient.smart.btn</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create first Patient !
+            </p>
+        </field>
+    </record>
+
+
+    <menuitem id="menu_patient_root"
+              name="patient"
+              action="action_patient_smart_btn"
+              parent="menu_custom_smart_btn_root"
+              sequence="0"/>
+
+</odoo>

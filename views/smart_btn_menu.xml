@@ -1,0 +1,8 @@
+<odoo>
+
+    <data>
+    <menuitem id="menu_custom_smart_btn_root"
+              name='Custom Smart Button'
+              sequence="0"/>
+    </data>
+</odoo>

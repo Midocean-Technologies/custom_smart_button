@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_custom_smart_button.patient.smart.btn,custom_smart_button.patient.smart.btn,model_patient_smart_btn,base.group_user,1,1,1,1
+access_custom_smart_button.appointment.smart.btn,custom_smart_button.appointment.smart.btn,model_appointment_smart_btn,base.group_user,1,1,1,1
