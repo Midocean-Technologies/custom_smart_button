@@ -13,6 +13,7 @@ class patientsmartbtn(models.Model):
     ph_no = fields.Char(string="Phone Number")
     appointment_ids = fields.One2many('appointment.smart.btn', 'patient_id', string='Appointments')
     appointment_count = fields.Integer(compute='_compute_appointment_count', string='Appointment Count', store=True)
+    appointment_count = fields.Integer(compute='_compute_appointment_count', string='Appointment Count', store=True)
     gender = fields.Selection([('male', 'Male'), ('female', 'Female'), ('other', 'Other')], String="Gender")
 
     @api.depends('appointment_ids')
